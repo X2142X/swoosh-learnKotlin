@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">swoosh</string>
+    <string name="go_all_in">GO ALL IN</string>
+    <string name="onGoingAllOut">ON GOING ALL OUT</string>
+    <string name="welcomeDescription">Find a team in your city &amp; dominate the league</string>
+</resources>
