@@ -3,4 +3,11 @@
     <string name="go_all_in">GO ALL IN</string>
     <string name="onGoingAllOut">ON GOING ALL OUT</string>
     <string name="welcomeDescription">Find a team in your city &amp; dominate the league</string>
+    <string name="getStartedButton">GET STARTED</string>
+    <string name="defaultDesc">-</string>
+    <string name="desiredLeague">Desired League :</string>
+    <string name="mensButton">Mens</string>
+    <string name="womenButton">Womens</string>
+    <string name="coedButton">Co-ed</string>
+    <string name="next">Next</string>
 </resources>
