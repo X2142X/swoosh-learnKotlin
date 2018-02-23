@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="swoosh.dev.adrianharitsyah.swoosh.LeagueScreen">
+    tools:context="swoosh.dev.adrianharitsyah.swoosh.Controller.LeagueScreen">
 
     <ImageView
         android:id="@+id/background"
@@ -106,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/swooshLogo" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/nextButton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -115,6 +115,7 @@
         android:layout_marginStart="16dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
+        android:onClick="goToSkill"
         android:text="@string/next"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"

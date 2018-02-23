@@ -10,4 +10,9 @@
     <string name="womenButton">Womens</string>
     <string name="coedButton">Co-ed</string>
     <string name="next">Next</string>
+    <string name="i_am_a">I am a :</string>
+    <string name="begineer">Begineer</string>
+    <string name="baller">Baller</string>
+    <string name="finish">FINISH</string>
+    <string name="default_search">Looking for Coed Beginer near you</string>
 </resources>
