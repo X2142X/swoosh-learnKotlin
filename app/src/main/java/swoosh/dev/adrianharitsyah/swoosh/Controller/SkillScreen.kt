@@ -5,37 +5,48 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_skill_screen.*
+import swoosh.dev.adrianharitsyah.swoosh.Model.Player
 import swoosh.dev.adrianharitsyah.swoosh.R
-import swoosh.dev.adrianharitsyah.swoosh.Utilities.LEAGUE_EXTRAS
-import swoosh.dev.adrianharitsyah.swoosh.Utilities.SKILL_EXTRAS
+import swoosh.dev.adrianharitsyah.swoosh.Utilities.EXTRA_PLAYER
 
 class SkillScreen : AppCompatActivity() {
 
-    var skill=""
+    lateinit var player:Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill_screen)
+        player=intent.getParcelableExtra(EXTRA_PLAYER)
 
         beginnerToggleButton.setOnClickListener {
             ballerToggleButton.isChecked=false
-            skill="Beginner"
+            player.skill="Beginner"
         }
 
         ballerToggleButton.setOnClickListener {
             beginnerToggleButton.isChecked=false
-            skill="Baller"
+            player.skill="Baller"
         }
 
         finishButton.setOnClickListener {
-            if(skill==""){
+            if(player.skill==""){
                 Toast.makeText(this,"Skill must be choosen",Toast.LENGTH_SHORT).show()
             }else{
                 val finishIntent=Intent(this,SearchingScreen::class.java)
-                finishIntent.putExtra(LEAGUE_EXTRAS,intent.getStringExtra(LEAGUE_EXTRAS))
-                finishIntent.putExtra(SKILL_EXTRAS,skill)
+                finishIntent.putExtra(EXTRA_PLAYER,player)
                 startActivity(finishIntent)
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER,player)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState!=null)
+            player=savedInstanceState.getParcelable(EXTRA_PLAYER)
     }
 }
